@@ -1,0 +1,43 @@
+name: eventrack_app
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  cupertino_icons: ^1.0.2
+  fluttericon: ^2.0.0
+  get: ^4.1.4
+  json_serializable: ^6.9.4
+  flutter_dotenv: ^5.0.0
+  dart_date: ^1.4.0
+  geolocator: ^13.0.2
+  google_maps_flutter: ^2.10.0
+  # mapbox_search_flutter: ^1.0.6+1
+  geocoding: ^3.0.0
+  get_cli: ^1.5.0
+  flutter_slidable: ^4.0.0
+  file_picker: ^9.0.1 # Update to the latest version
+  flutter:
+    sdk: flutter
+  dio: ^5.8.0+1
+  shared_preferences: ^2.0.6
+  expandable: ^5.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: ^2.0.4
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/icons/
+    - assets/images/
+
+  fonts:
+    - family: Sarabun
+      fonts:
+        - asset: assets/fonts/Sarabun/Sarabun-Regular.ttf

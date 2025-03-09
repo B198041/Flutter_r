@@ -1,0 +1,56 @@
+import 'package:flutter/material.dart';
+
+import 'package:get/get.dart';
+
+import '../../../../global_widgets/button.dart';
+import '../../../../routes/app_pages.dart';
+import '../../controllers/organization_profile_controller.dart';
+
+class OrganizationProfileTab1 extends GetView<OrganizationProfileController> {
+  OrganizationProfileTab1({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ListTile(
+          contentPadding: EdgeInsets.all(0),
+          title: Text(
+            controller.orgData.name!, //? Organization Name
+            style:
+                Get.textTheme.headlineMedium!.copyWith(fontWeight: FontWeight.w700),
+          ),
+          subtitle: Text(
+            controller.orgData.address!, //? Organization's address
+            style:
+                Get.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.w500),
+          ),
+        ).paddingSymmetric(vertical: 8),
+        Text(
+          'About',
+          style: Get.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.w600),
+        ).paddingOnly(top: 12),
+        Text(
+          controller.orgData.description!, //? Organization's description
+          // maxLines: !controller.showMore.value ? 12 : null,
+          style: Get.textTheme.bodyLarge,
+        ),
+        // Obx(
+        //   () => ETTextButton(
+        //     !controller.showMore.value ? 'Show More' : 'Show Less',
+        //     onPressed: controller.toggleDescriptionDisplay,
+        //   ),
+        // ),
+        Center(
+          child: ETElevatedButton(
+            onPressed: () async {
+              await Get.toNamed(Routes.CREATE_EVENT);
+            },
+            childText: 'Create Event',
+          ),
+        ).paddingSymmetric(vertical: 20),
+      ],
+    ).paddingSymmetric(horizontal: 20);
+  }
+}
